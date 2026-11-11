@@ -2,7 +2,6 @@
 
 Uma proposta de projeto de extensão universitária voltada à comunidade e ao eixo de Economia Sustentável.
 
----
 
 ## O que é o projeto?
 O **Brechó do Bairro** nasceu da ideia de incentivar a economia circular e o consumo consciente dentro da própria vizinhança. Em muitas casas, roupas em perfeito estado, calçados pouco usados, brinquedos, livros e utensílios domésticos acabam esquecidos em armários ou jogados no lixo comum, enquanto outros moradores poderiam aproveitá-los.
@@ -14,7 +13,6 @@ O projeto funciona como uma vitrine comunitária simples onde qualquer morador p
 
 A negociação acontece direto entre as pessoas pelo WhatsApp, sem intermediários, taxas ou burocracia.
 
----
 
 ## Por que essa iniciativa existe?
 
@@ -27,7 +25,6 @@ A indústria da moda e a fabricação de novos bens de consumo gastam milhares d
 ### 3. Fortalecimento da comunidade
 Promover a troca entre vizinhos cria laços de solidariedade, confiança e aproximação entre pessoas que moram na mesma rua ou região, resgatando o hábito do comércio local e do apoio mútuo.
 
----
 
 ## Como o site foi organizado
 
@@ -37,7 +34,6 @@ O portal foi dividido em três partes principais para facilitar o acesso:
 2. **Quero Anunciar:** Uma página direta onde qualquer pessoa pode tirar uma foto do item, colocar o estado de conservação, definir o preço (se for venda) e cadastrar seu próprio contato.
 3. **Dicas & Cuidados:** Um guia educativo com truques caseiros para tirar manchas sem produtos agressivos, cuidados para higienizar peças usadas e ideias de reaproveitamento criativo (*upcycling*).
 
----
 
 ## Acessibilidade e Inclusão
 
@@ -47,7 +43,6 @@ O projeto foi pensado desde o início para pessoas de todas as idades, com aten�
 - Linguagem simples, sem termos técnicos em inglês ou jargões da internet;
 - Nada de senhas, cadastros complexos ou aplicativos pesados para instalar.
 
----
 
 ## Compromisso com os Objetivos de Desenvolvimento Sustentável (ONU)
 
