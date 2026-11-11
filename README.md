@@ -46,6 +46,6 @@ O projeto foi pensado desde o início para pessoas de todas as idades, com aten�
 
 ## Compromisso com os Objetivos de Desenvolvimento Sustentável (ONU)
 
-O projeto está alinhado com dois ODS fundamentais da Agenda 2030:
+O projeto está alinhado com dois ODS fundamentais:
 * **ODS 12 — Consumo e Produção Responsáveis:** Incentivo ao reaproveitamento, diminuição do desperdício e valorização da vida útil dos materiais.
 * **ODS 8 — Trabalho Decente e Crescimento Econômico:** Estímulo à economia solidária, circulação de renda local e oportunidade de pequenos ganhos comunitários.
