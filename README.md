@@ -5,7 +5,6 @@ Uma proposta de projeto de extensão universitária voltada à comunidade e ao e
 ---
 
 ## O que é o projeto?
-
 O **Brechó do Bairro** nasceu da ideia de incentivar a economia circular e o consumo consciente dentro da própria vizinhança. Em muitas casas, roupas em perfeito estado, calçados pouco usados, brinquedos, livros e utensílios domésticos acabam esquecidos em armários ou jogados no lixo comum, enquanto outros moradores poderiam aproveitá-los.
 
 O projeto funciona como uma vitrine comunitária simples onde qualquer morador pode:
