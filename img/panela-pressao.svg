@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="400" height="300" fill="#f4f7f6" rx="12"/>
+  <!-- Corpo da panela (alumínio polido com brilho) -->
+  <path d="M140 135 L260 135 C265 135 270 145 268 190 C265 235 250 245 200 245 C150 245 135 235 132 190 C130 145 135 135 140 135 Z" fill="#ced4da" stroke="#495057" stroke-width="3"/>
+  <!-- Tampa abaulada -->
+  <path d="M135 135 Q200 115 265 135" fill="#adb5bd" stroke="#495057" stroke-width="3"/>
+  <!-- Cabo principal da tampa com haste preta -->
+  <rect x="250" y="118" width="100" height="18" rx="6" fill="#212529"/>
+  <!-- Cabo da panela inferior -->
+  <rect x="250" y="138" width="95" height="18" rx="6" fill="#343a40"/>
+  <!-- Alça de apoio do outro lado -->
+  <path d="M132 150 C110 150 110 175 132 175" fill="none" stroke="#343a40" stroke-width="7" stroke-linecap="round"/>
+  <!-- Válvula de pressão com pino central -->
+  <rect x="194" y="98" width="12" height="22" rx="2" fill="#212529"/>
+  <ellipse cx="200" cy="98" rx="10" ry="5" fill="#e63946"/>
+  <!-- Válvula de segurança lateral -->
+  <circle cx="170" cy="120" r="4.5" fill="#e76f51"/>
+  <text x="200" y="280" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2d6a4f">Panela de Pressão 4,5 Litros</text>
+</svg>
+

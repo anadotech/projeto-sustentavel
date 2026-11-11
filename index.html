@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Brechó do Bairro: proposta de extensão universitária de economia sustentável para troca, doação e venda de roupas e objetos na comunidade." />
+  
+  <title>Brechó do Bairro | Vitrine Comunitária</title>
+
+  <!-- Logo do site -->
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
+
+  <!-- Icones do Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Estilos da pagina -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- Topo da pagina -->
+  <header class="topo-hero text-center" role="banner">
+    <div class="container">
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+        <img src="img/logo.svg" alt="Logo do Brechó do Bairro" class="marca-logo" />
+        <h1 class="titulo-principal m-0">Brechó do Bairro</h1>
+      </div>
+
+      <p class="subtitulo-hero mb-0">
+        Dê nova vida ao que você não usa mais: troque, doe ou compre roupas e objetos de quem mora perto de você.
+      </p>
+    </div>
+  </header>
+
+  <!-- Menu de abas -->
+  <nav class="navegacao-abas" aria-label="Navegação entre as abas do Brechó do Bairro">
+    <div class="container d-flex justify-content-center">
+      <div class="grupo-abas">
+        <a href="index.html" class="item-aba aba-ativa" aria-current="page">
+          <i class="bi bi-grid-fill me-2" aria-hidden="true"></i>
+          <span>Vitrine de Peças</span>
+        </a>
+        <a href="anunciar.html" class="item-aba">
+          <i class="bi bi-plus-circle-fill me-2" aria-hidden="true"></i>
+          <span>Quero Anunciar</span>
+        </a>
+        <a href="dicas.html" class="item-aba">
+          <i class="bi bi-lightbulb-fill me-2" aria-hidden="true"></i>
+          <span>Dicas & Cuidados</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Aviso sobre projeto academico -->
+  <aside class="alerta-extensao" aria-label="Aviso sobre o projeto acadêmico">
+    <div class="container text-center">
+      <i class="bi bi-info-circle-fill me-2" aria-hidden="true"></i>
+      <strong>Aviso:</strong> Imagens e anúncios ilustrativos. Esta página é uma proposta de projeto de extensão universitária no eixo de Economia Sustentável.
+    </div>
+  </aside>
+
+  <main id="conteudo-principal">
+    <!-- Vitrine de pecas -->
+    <section id="vitrine" class="secao-vitrine" aria-labelledby="titulo-vitrine">
+      <div class="container">
+        <div class="cabecalho-secao">
+          <h2 id="titulo-vitrine" class="titulo-secao">Vitrine do Bairro</h2>
+          <p class="subtitulo-secao">Escolha uma peça e converse diretamente com quem anunciou pelo WhatsApp.</p>
+        </div>
+
+        <!-- Filtros de busca -->
+        <div class="painel-filtros" role="search" aria-label="Filtros da vitrine">
+          <div class="row g-3 align-items-end">
+            <div class="col-12 col-md-5">
+              <label for="filtro-categoria" class="rotulo-filtro">
+                <i class="bi bi-funnel-fill text-success" aria-hidden="true"></i>
+                Filtrar por Categoria:
+              </label>
+              <select id="filtro-categoria" class="select-acessivel" aria-label="Filtrar por Categoria">
+                <option value="todos">Todas as categorias</option>
+                <option value="Roupas">Roupas</option>
+                <option value="Calçados">Calçados</option>
+                <option value="Infantil">Infantil</option>
+                <option value="Casa e objetos">Casa e objetos</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-md-5">
+              <label for="filtro-tipo" class="rotulo-filtro">
+                <i class="bi bi-tags-fill text-success" aria-hidden="true"></i>
+                Filtrar por Tipo:
+              </label>
+              <select id="filtro-tipo" class="select-acessivel" aria-label="Filtrar por Tipo de Transação">
+                <option value="todos">Todos os tipos (Troca, Doação e Venda)</option>
+                <option value="Troca">Apenas Troca</option>
+                <option value="Doação">Apenas Doação</option>
+                <option value="Venda">Apenas Venda</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-md-2">
+              <button type="button" id="btn-limpar-filtros" class="btn-limpar-filtros w-100" aria-label="Limpar filtros e mostrar todas as peças">
+                <i class="bi bi-x-circle me-1" aria-hidden="true"></i> Limpar
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-3 text-secondary fw-semibold" id="contador-pecas" aria-live="polite">
+            Carregando peças disponíveis...
+          </div>
+        </div>
+
+        <!-- Grade de cards gerados pelo JavaScript -->
+        <div class="row g-4" id="grade-anuncios">
+        </div>
+
+        <!-- Chamada para a aba de cadastro -->
+        <div class="bloco-acao-central">
+          <div class="p-4 bg-white rounded-4 border shadow-sm">
+            <h3 class="h4 fw-bold text-dark mb-2">Quer desapegar de algo parado na sua casa?</h3>
+            <p class="text-secondary fs-5 mb-3">Publique sua peça de graça para os vizinhos verem!</p>
+            <a href="anunciar.html" class="btn-cta-principal">
+              <i class="bi bi-plus-circle-fill fs-5" aria-hidden="true"></i>
+              <span>Ir para a aba Quero Anunciar</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficios de reaproveitar -->
+    <section class="secao-beneficios" aria-labelledby="titulo-beneficios">
+      <div class="container">
+        <div class="cabecalho-secao">
+          <h2 id="titulo-beneficios" class="titulo-secao">Por Que Reaproveitar?</h2>
+          <p class="subtitulo-secao">Reutilizar o que já existe gera benefícios reais para todos nós:</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-12 col-md-4">
+            <div class="card-beneficio">
+              <div class="icone-beneficio" aria-hidden="true">
+                <i class="bi bi-piggy-bank-fill"></i>
+              </div>
+              <h3 class="h4 fw-bold text-dark mb-2">Bom para o bolso</h3>
+              <p class="text-secondary m-0">
+                Você economiza dinheiro ao conseguir o que precisa por valores acessíveis, troca justa ou doação, e ainda faz uma renda extra com o que está parado.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card-beneficio">
+              <div class="icone-beneficio" aria-hidden="true">
+                <i class="bi bi-tree-fill"></i>
+              </div>
+              <h3 class="h4 fw-bold text-dark mb-2">Bom para o meio ambiente</h3>
+              <p class="text-secondary m-0">
+                Menos objetos descartados em lixões e menos consumo de água e matérias-primas para fabricar produtos novos. O planeta agradece a reutilização.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card-beneficio">
+              <div class="icone-beneficio" aria-hidden="true">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <h3 class="h4 fw-bold text-dark mb-2">Bom para a vizinhança</h3>
+              <p class="text-secondary m-0">
+                Aproxima as pessoas da comunidade, incentiva a solidariedade e constrói laços de confiança e apoio mútuo no nosso bairro.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como funciona o brecho (antes do rodape) -->
+    <section class="secao-passos" aria-labelledby="titulo-passos">
+      <div class="container">
+        <div class="cabecalho-secao">
+          <h2 id="titulo-passos" class="titulo-secao">Como Funciona?</h2>
+          <p class="subtitulo-secao">Participar do Brechó do Bairro é muito simples:</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-12 col-md-4">
+            <div class="card-passo">
+              <div class="numero-passo" aria-hidden="true">1</div>
+              <i class="bi bi-eye-fill icone-passo" aria-hidden="true"></i>
+              <h3 class="titulo-passo">1. Veja as peças</h3>
+              <p class="text-secondary m-0">Navegue pela vitrine do bairro e use os filtros por roupas, calçados, infantil ou casa.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card-passo">
+              <div class="numero-passo" aria-hidden="true">2</div>
+              <i class="bi bi-whatsapp icone-passo text-success" aria-hidden="true"></i>
+              <h3 class="titulo-passo">2. Fale no WhatsApp</h3>
+              <p class="text-secondary m-0">Gostou de algo? Clique no botão verde do anúncio para conversar direto com o morador.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card-passo">
+              <div class="numero-passo" aria-hidden="true">3</div>
+              <i class="bi bi-hand-thumbs-up-fill icone-passo text-primary" aria-hidden="true"></i>
+              <h3 class="titulo-passo">3. Combine tudo</h3>
+              <p class="text-secondary m-0">Vocês combinam o local seguro de entrega, a troca ou o pagamento perto de casa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodape -->
+  <footer class="rodape-principal" role="contentinfo">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Sobre a iniciativa -->
+        <div class="col-12 col-md-6 col-lg-5">
+          <h5><i class="bi bi-mortarboard-fill me-2" aria-hidden="true"></i>Brechó do Bairro</h5>
+          <p class="mb-2">
+            Proposta de Trabalho de Extensão Universitária vinculada ao <strong>Eixo Economia Sustentável</strong>.
+          </p>
+          <p class="mb-0">
+            Iniciativa acadêmica voltada ao incentivo do consumo consciente, redução de desperdício e integração comunitária por meio da economia circular solidária.
+          </p>
+        </div>
+
+        <!-- Objetivos de sustentabilidade -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5><i class="bi bi-globe-americas me-2" aria-hidden="true"></i>Compromisso com os ODS (ONU)</h5>
+          <div>
+            <div class="ods-badge">
+              <i class="bi bi-arrow-repeat me-1" aria-hidden="true"></i>
+              <strong>ODS 12:</strong> Consumo e Produção Responsáveis
+            </div>
+          </div>
+          <div>
+            <div class="ods-badge">
+              <i class="bi bi-graph-up-arrow me-1" aria-hidden="true"></i>
+              <strong>ODS 8:</strong> Trabalho Decente e Crescimento Econômico
+            </div>
+          </div>
+        </div>
+
+        <!-- Links rapidos -->
+        <div class="col-12 col-md-12 col-lg-3">
+          <h5><i class="bi bi-link-45deg me-2" aria-hidden="true"></i>Acesso Rápido</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html">Vitrine de Peças</a></li>
+            <li class="mb-2"><a href="anunciar.html">Quero Anunciar uma Peça</a></li>
+            <li class="mb-2"><a href="dicas.html">Dicas & Cuidados</a></li>
+            <li class="mb-2"><a href="#conteudo-principal">Voltar ao Topo</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Creditos -->
+      <div class="rodape-creditos text-center">
+        <p class="mb-0">
+          <strong>Créditos visuais:</strong> Ilustrações vetorizadas em formato SVG produzidas localmente para este projeto, com base no estilo limpo de bancos livres (Unsplash/Freepik/Pixabay).
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botao para voltar ao topo da tela -->
+  <a href="#conteudo-principal" class="btn-voltar-topo" aria-label="Voltar ao início da página" title="Voltar ao topo">
+    <i class="bi bi-chevron-up" aria-hidden="true"></i>
+  </a>
+
+  <!-- Script da pagina -->
+  <script src="js/script.js"></script>
+</body>
+</html>

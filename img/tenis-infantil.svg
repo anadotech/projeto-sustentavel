@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="400" height="300" fill="#e8f5e9" rx="12"/>
+  <!-- Tênis Infantil Lateral -->
+  <!-- Sola branca e emborrachada -->
+  <path d="M90 220 C90 215 110 210 160 210 L300 210 C320 210 330 225 315 235 L95 235 C88 235 88 225 90 220 Z" fill="#ffffff" stroke="#adb5bd" stroke-width="2"/>
+  <line x1="95" y1="230" x2="315" y2="230" stroke="#ced4da" stroke-width="2"/>
+  <!-- Corpo do calçado azul e detalhes verdes -->
+  <path d="M120 210 C105 190 100 135 140 135 C155 135 170 165 210 170 L280 180 C310 190 315 210 300 210 Z" fill="#457b9d" stroke="#1d3557" stroke-width="3"/>
+  <!-- Biqueira protetora -->
+  <path d="M280 180 C298 185 305 198 300 210 L275 210 Z" fill="#ffffff" stroke="#ced4da" stroke-width="2"/>
+  <!-- Fita de velcro fácil -->
+  <rect x="155" y="155" width="60" height="18" rx="5" fill="#2a9d8f" stroke="#1d3557" stroke-width="2"/>
+  <circle cx="205" cy="164" r="3" fill="#e9c46a"/>
+  <!-- Cano acolchoado -->
+  <ellipse cx="138" cy="138" rx="18" ry="8" fill="#e63946"/>
+  <text x="200" y="280" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2d6a4f">Tênis Infantil Tam 28</text>
+</svg>
+

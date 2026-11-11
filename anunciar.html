@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Anuncie roupas e objetos usados para troca, doação ou venda no Brechó do Bairro com contato direto pelo WhatsApp." />
+  
+  <title>Quero Anunciar | Brechó do Bairro</title>
+
+  <!-- Logo do site -->
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
+
+  <!-- Icones do Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Estilos da pagina -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- Topo da pagina -->
+  <header class="topo-hero text-center" role="banner">
+    <div class="container">
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+        <img src="img/logo.svg" alt="Logo do Brechó do Bairro" class="marca-logo" />
+        <h1 class="titulo-principal m-0">Brechó do Bairro</h1>
+      </div>
+
+      <p class="subtitulo-hero mb-0">
+        Cadastre sua peça para doar, trocar ou vender diretamente para vizinhos da comunidade.
+      </p>
+    </div>
+  </header>
+
+  <!-- Menu de abas -->
+  <nav class="navegacao-abas" aria-label="Navegação entre as abas do Brechó do Bairro">
+    <div class="container d-flex justify-content-center">
+      <div class="grupo-abas">
+        <a href="index.html" class="item-aba">
+          <i class="bi bi-grid-fill me-2" aria-hidden="true"></i>
+          <span>Vitrine de Peças</span>
+        </a>
+        <a href="anunciar.html" class="item-aba aba-ativa" aria-current="page">
+          <i class="bi bi-plus-circle-fill me-2" aria-hidden="true"></i>
+          <span>Quero Anunciar</span>
+        </a>
+        <a href="dicas.html" class="item-aba">
+          <i class="bi bi-lightbulb-fill me-2" aria-hidden="true"></i>
+          <span>Dicas & Cuidados</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Aviso sobre o projeto de extensao -->
+  <aside class="alerta-extensao" aria-label="Aviso sobre o projeto acadêmico">
+    <div class="container text-center">
+      <i class="bi bi-info-circle-fill me-2" aria-hidden="true"></i>
+      <strong>Aviso:</strong> Imagens e anúncios ilustrativos. Esta página é uma proposta de projeto de extensão universitária no eixo de Economia Sustentável.
+    </div>
+  </aside>
+
+  <main id="conteudo-principal">
+    <!-- Formulario para anunciar uma peca -->
+    <section class="secao-anunciar" aria-labelledby="titulo-anunciar">
+      <div class="container">
+        <div class="caixa-anuncio">
+          <div class="cabecalho-secao mb-4">
+            <span class="badge bg-success-subtle text-success fs-6 px-3 py-2 rounded-pill fw-bold mb-2">Desapegue com facilidade</span>
+            <h2 id="titulo-anunciar" class="titulo-secao">Cadastre sua peça no Brechó</h2>
+            <p class="subtitulo-secao">Preencha os campos abaixo. Seu anúncio aparecerá na vitrine com botão direto para o <strong>seu WhatsApp</strong>!</p>
+          </div>
+
+          <!-- Mensagem de sucesso ao cadastrar -->
+          <div id="alerta-sucesso-anuncio" class="alert alert-success d-none text-center shadow-sm" role="alert">
+            <i class="bi bi-check-circle-fill fs-4 me-2"></i>
+            <strong class="fs-5">Anúncio publicado com sucesso!</strong>
+            <p class="mb-2 mt-1">Sua peça já está visível na vitrine comunitária.</p>
+            <a href="index.html" class="btn btn-outline-success fw-bold px-4 py-2 mt-2">
+              <i class="bi bi-arrow-right-circle me-1"></i> Ir para a Vitrine ver meu anúncio
+            </a>
+          </div>
+
+          <!-- Formulario de cadastro -->
+          <form id="form-novo-anuncio" novalidate>
+            <div class="row g-3">
+              <!-- Nome da peca -->
+              <div class="col-12 col-md-7">
+                <label for="anuncio-nome" class="form-label">
+                  <i class="bi bi-tag me-1 text-success"></i> Nome da Peça:
+                </label>
+                <input type="text" id="anuncio-nome" class="input-acessivel" placeholder="Ex: Jaqueta jeans, Panela de pressão, Cadeira..." required />
+              </div>
+
+              <!-- Categoria -->
+              <div class="col-12 col-md-5">
+                <label for="anuncio-categoria" class="form-label">
+                  <i class="bi bi-folder2 me-1 text-success"></i> Categoria:
+                </label>
+                <select id="anuncio-categoria" class="select-acessivel" required>
+                  <option value="" disabled selected>Escolha uma categoria...</option>
+                  <option value="Roupas">Roupas</option>
+                  <option value="Calçados">Calçados</option>
+                  <option value="Infantil">Infantil</option>
+                  <option value="Casa e objetos">Casa e objetos</option>
+                </select>
+              </div>
+
+              <!-- Estado de conservacao -->
+              <div class="col-12 col-md-4">
+                <label for="anuncio-estado" class="form-label">
+                  <i class="bi bi-shield-check me-1 text-success"></i> Estado da Peça:
+                </label>
+                <select id="anuncio-estado" class="select-acessivel" required>
+                  <option value="Ótimo estado">Ótimo estado</option>
+                  <option value="Bom estado" selected>Bom estado</option>
+                  <option value="Com marcas de uso">Com marcas de uso</option>
+                </select>
+              </div>
+
+              <!-- Tipo de negociacao -->
+              <div class="col-12 col-md-4">
+                <label for="anuncio-tipo" class="form-label">
+                  <i class="bi bi-arrow-repeat me-1 text-success"></i> O que você quer fazer?
+                </label>
+                <select id="anuncio-tipo" class="select-acessivel" required>
+                  <option value="Venda" selected>Venda (quero vender)</option>
+                  <option value="Troca">Troca (aceito trocar)</option>
+                  <option value="Doação">Doação (quero doar)</option>
+                </select>
+              </div>
+
+              <!-- Preco -->
+              <div class="col-12 col-md-4" id="campo-container-preco">
+                <label for="anuncio-preco" class="form-label">
+                  <i class="bi bi-cash-coin me-1 text-success"></i> Preço (R$):
+                </label>
+                <input type="text" id="anuncio-preco" class="input-acessivel" placeholder="Ex: R$ 35,00" />
+                <small class="text-secondary d-block mt-1">Preencha apenas se for venda</small>
+              </div>
+
+              <!-- WhatsApp de quem anuncia -->
+              <div class="col-12 col-md-6">
+                <label for="anuncio-whatsapp" class="form-label">
+                  <i class="bi bi-whatsapp me-1 text-success"></i> Seu WhatsApp (com DDD):
+                </label>
+                <input type="tel" id="anuncio-whatsapp" class="input-acessivel" placeholder="Ex: (11) 99999-8888" required />
+                <small class="text-secondary d-block mt-1">É para cá que os vizinhos interessados vão mandar mensagem.</small>
+              </div>
+
+              <!-- Foto da peca -->
+              <div class="col-12 col-md-6">
+                <label for="anuncio-foto" class="form-label">
+                  <i class="bi bi-camera-fill me-1 text-success"></i> Foto da Peça (do seu celular/PC):
+                </label>
+                <input type="file" id="anuncio-foto" class="input-acessivel" accept="image/*" />
+                <small class="text-secondary d-block mt-1">Opcional. Se não enviar foto, usaremos uma ilustração padrão.</small>
+              </div>
+
+              <!-- Previa da foto -->
+              <div class="col-12 d-none" id="preview-foto-container">
+                <label class="form-label">Prévia da Foto Selecionada:</label>
+                <div>
+                  <img id="img-preview" src="#" alt="Prévia da foto selecionada" class="rounded-3 border shadow-sm" style="max-height: 180px; object-fit: cover;" />
+                </div>
+              </div>
+
+              <!-- Descricao -->
+              <div class="col-12">
+                <label for="anuncio-descricao" class="form-label">
+                  <i class="bi bi-pencil-square me-1 text-success"></i> Descrição Curta da Peça:
+                </label>
+                <textarea id="anuncio-descricao" class="input-acessivel" rows="3" placeholder="Descreva o tamanho, cor, tempo de uso e outros detalhes importantes..." required></textarea>
+              </div>
+            </div>
+
+            <!-- Aviso de seguranca -->
+            <div class="caixa-aviso-responsabilidade mt-4">
+              <div class="d-flex align-items-start gap-2">
+                <i class="bi bi-exclamation-triangle-fill fs-4 text-warning" aria-hidden="true"></i>
+                <div>
+                  <strong>Atenção e Segurança:</strong> Ao anunciar, o contato e a negociação combinados com as pessoas ficam por sua conta e responsabilidade. Não envie dados pessoais além do necessário (como senhas, documentos ou transferências antecipadas).
+                </div>
+              </div>
+            </div>
+
+            <!-- Botao de envio -->
+            <div class="text-center mt-4">
+              <button type="submit" class="btn-anunciar-whatsapp">
+                <i class="bi bi-cloud-arrow-up-fill fs-4" aria-hidden="true"></i>
+                <span>Publicar Minha Peça na Vitrine</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como funciona o brecho (antes do rodape) -->
+    <section class="secao-passos" aria-labelledby="titulo-passos">
+      <div class="container">
+        <div class="cabecalho-secao">
+          <h2 id="titulo-passos" class="titulo-secao">Como Funciona?</h2>
+          <p class="subtitulo-secao">Reaproveitar é simples e rápido. Veja os 3 passos:</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-12 col-md-4">
+            <div class="card-passo">
+              <div class="numero-passo" aria-hidden="true">1</div>
+              <i class="bi bi-eye-fill icone-passo" aria-hidden="true"></i>
+              <h3 class="titulo-passo">1. Veja as peças</h3>
+              <p class="text-secondary m-0">Navegue pelos anúncios na aba Vitrine com filtros fáceis.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card-passo">
+              <div class="numero-passo" aria-hidden="true">2</div>
+              <i class="bi bi-whatsapp icone-passo text-success" aria-hidden="true"></i>
+              <h3 class="titulo-passo">2. Fale no WhatsApp</h3>
+              <p class="text-secondary m-0">Converse direto com quem anunciou clicando no botão verde da peça.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card-passo">
+              <div class="numero-passo" aria-hidden="true">3</div>
+              <i class="bi bi-hand-thumbs-up-fill icone-passo text-primary" aria-hidden="true"></i>
+              <h3 class="titulo-passo">3. Combine tudo</h3>
+              <p class="text-secondary m-0">Vocês combinam a entrega, a troca ou o pagamento perto de casa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodape -->
+  <footer class="rodape-principal" role="contentinfo">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Sobre o projeto -->
+        <div class="col-12 col-md-6 col-lg-5">
+          <h5><i class="bi bi-mortarboard-fill me-2" aria-hidden="true"></i>Brechó do Bairro</h5>
+          <p class="mb-2">
+            Proposta de Trabalho de Extensão Universitária vinculada ao <strong>Eixo Economia Sustentável</strong>.
+          </p>
+          <p class="mb-0">
+            Iniciativa acadêmica voltada ao incentivo do consumo consciente, redução de desperdício e integração comunitária por meio da economia circular solidária.
+          </p>
+        </div>
+
+        <!-- Objetivos de sustentabilidade -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5><i class="bi bi-globe-americas me-2" aria-hidden="true"></i>Compromisso com os ODS (ONU)</h5>
+          <div>
+            <div class="ods-badge">
+              <i class="bi bi-arrow-repeat me-1" aria-hidden="true"></i>
+              <strong>ODS 12:</strong> Consumo e Produção Responsáveis
+            </div>
+          </div>
+          <div>
+            <div class="ods-badge">
+              <i class="bi bi-graph-up-arrow me-1" aria-hidden="true"></i>
+              <strong>ODS 8:</strong> Trabalho Decente e Crescimento Econômico
+            </div>
+          </div>
+        </div>
+
+        <!-- Links rapidos -->
+        <div class="col-12 col-md-12 col-lg-3">
+          <h5><i class="bi bi-link-45deg me-2" aria-hidden="true"></i>Acesso Rápido</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html">Vitrine de Peças</a></li>
+            <li class="mb-2"><a href="anunciar.html">Quero Anunciar uma Peça</a></li>
+            <li class="mb-2"><a href="dicas.html">Dicas & Cuidados</a></li>
+            <li class="mb-2"><a href="#conteudo-principal">Voltar ao Topo</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Creditos -->
+      <div class="rodape-creditos text-center">
+        <p class="mb-0">
+          <strong>Créditos visuais:</strong> Ilustrações vetorizadas em formato SVG produzidas localmente para este projeto, com base no estilo limpo de bancos livres (Unsplash/Freepik/Pixabay).
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botao flutuante de voltar ao topo -->
+  <a href="#conteudo-principal" class="btn-voltar-topo" aria-label="Voltar ao início da página" title="Voltar ao topo">
+    <i class="bi bi-chevron-up" aria-hidden="true"></i>
+  </a>
+
+  <!-- Script da pagina -->
+  <script src="js/script.js"></script>
+</body>
+</html>

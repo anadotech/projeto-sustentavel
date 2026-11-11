@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="400" height="300" fill="#fefae0" rx="12"/>
+  <!-- Alças e Top do Vestido -->
+  <path d="M175 60 L180 110 L160 145 L240 145 L220 110 L225 60" fill="none" stroke="#e76f51" stroke-width="4"/>
+  <!-- Saia rodada -->
+  <path d="M160 145 Q200 155 240 145 L285 240 Q200 255 115 240 Z" fill="#f4a261" stroke="#e76f51" stroke-width="3"/>
+  <!-- Estampa floral sutil -->
+  <circle cx="160" cy="180" r="6" fill="#fff" opacity="0.8"/>
+  <circle cx="200" cy="200" r="7" fill="#fff" opacity="0.8"/>
+  <circle cx="240" cy="180" r="6" fill="#fff" opacity="0.8"/>
+  <circle cx="180" cy="225" r="5" fill="#fff" opacity="0.8"/>
+  <circle cx="225" cy="225" r="6" fill="#fff" opacity="0.8"/>
+  <!-- Cinto/Laço na cintura -->
+  <rect x="155" y="140" width="90" height="8" rx="4" fill="#2a9d8f"/>
+  <circle cx="200" cy="144" r="5" fill="#264653"/>
+  <text x="200" y="282" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#8d5b4c">Vestido de Verão Estampado</text>
+</svg>
+

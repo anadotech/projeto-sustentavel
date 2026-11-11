@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="400" height="300" fill="#fdf0ed" rx="12"/>
+  <!-- Alça de mão superior -->
+  <path d="M175 60 C175 40 225 40 225 60" fill="none" stroke="#264653" stroke-width="5" stroke-linecap="round"/>
+  <!-- Corpo da mochila -->
+  <rect x="135" y="60" width="130" height="180" rx="28" fill="#e76f51" stroke="#264653" stroke-width="3"/>
+  <!-- Bolso frontal inferior -->
+  <rect x="150" y="145" width="100" height="80" rx="12" fill="#f4a261" stroke="#264653" stroke-width="2.5"/>
+  <!-- Zíper superior e do bolso -->
+  <path d="M150 90 Q200 80 250 90" stroke="#264653" stroke-width="2.5" fill="none" stroke-dasharray="3,2"/>
+  <line x1="160" y1="155" x2="240" y2="155" stroke="#264653" stroke-width="2.5" stroke-dasharray="3,2"/>
+  <circle cx="200" cy="155" r="4" fill="#e9c46a"/>
+  <!-- Puxadores e chaveiro -->
+  <rect x="155" y="185" width="40" height="12" rx="4" fill="#2a9d8f"/>
+  <circle cx="230" cy="185" r="7" fill="#e9c46a"/>
+  <text x="200" y="280" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#8d5b4c">Mochila Escolar Resistente</text>
+</svg>
+
