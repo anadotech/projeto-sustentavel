@@ -39,6 +39,7 @@ O portal foi dividido em três partes principais para facilitar o acesso:
 
 O projeto foi pensado desde o início para pessoas de todas as idades, com atenção especial a **idosos e moradores com pouca prática no uso de celulares e computadores**:
 - Letras grandes e textos fáceis de ler;
+- Alternância entre Modo Claro e Modo Escuro com alto contraste para conforto visual;
 - Botões largos e cores de alto contraste;
 - Linguagem simples, sem termos técnicos em inglês ou jargões da internet;
 - Nada de senhas, cadastros complexos ou aplicativos pesados para instalar.

@@ -458,8 +458,45 @@ window.removerAnuncio = function(id) {
   }
 };
 
+// Controla a troca entre modo claro e escuro
+function configurarAlternadorTema() {
+  const btnTema = document.getElementById("btn-tema");
+  const iconeTema = document.getElementById("icone-tema");
+  const textoTema = document.getElementById("texto-tema");
+
+  function atualizarBotaoTema(tema) {
+    if (!iconeTema || !textoTema) return;
+    if (tema === "escuro") {
+      iconeTema.className = "bi bi-sun-fill me-1";
+      textoTema.textContent = "Modo Claro";
+      if (btnTema) btnTema.setAttribute("title", "Mudar para o modo claro");
+    } else {
+      iconeTema.className = "bi bi-moon-stars-fill me-1";
+      textoTema.textContent = "Modo Escuro";
+      if (btnTema) btnTema.setAttribute("title", "Mudar para o modo escuro");
+    }
+  }
+
+  const temaAtual = document.documentElement.getAttribute("data-tema") || "claro";
+  atualizarBotaoTema(temaAtual);
+
+  if (btnTema) {
+    btnTema.addEventListener("click", () => {
+      const temaNovo = document.documentElement.getAttribute("data-tema") === "escuro" ? "claro" : "escuro";
+      document.documentElement.setAttribute("data-tema", temaNovo);
+      try {
+        localStorage.setItem("brecho_tema", temaNovo);
+      } catch (e) {
+        console.error("Não foi possível salvar a preferência de tema:", e);
+      }
+      atualizarBotaoTema(temaNovo);
+    });
+  }
+}
+
 // Inicia as funcoes quando a pagina carregar
 document.addEventListener("DOMContentLoaded", () => {
+  configurarAlternadorTema();
   renderizarVitrine(obterTodosOsAnuncios());
 
   const selectCategoria = document.getElementById("filtro-categoria");

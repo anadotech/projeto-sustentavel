@@ -1,16 +1,55 @@
 /* Cores do projeto */
 :root {
+  /* Variaveis do modo claro (padrao) */
+  --fundo-pagina: #fdfaf6;
+  --fundo-secao-alt: #ffffff;
+  --fundo-card: #ffffff;
+  --borda-card: #e2e8f0;
+  --borda-card-hover: #94a3b8;
+  --texto-principal: #1c2520;
+  --texto-suave: #4b5563;
+  --titulo-cor: #1b4332;
+
+  --fundo-painel: #ffffff;
+  --borda-painel: #e7dfd5;
+
+  --fundo-inputs: #f8fafc;
+  --borda-inputs: #cbd5e1;
+  --texto-inputs: #1c2520;
+
+  --fundo-passo: #f2f7f4;
+  --borda-passo: #cfe3d6;
+
+  --fundo-alerta: #fef3c7;
+  --borda-alerta: #d97706;
+  --texto-alerta: #78350f;
+
+  --fundo-aviso-seguranca: #fffbeb;
+  --borda-aviso-seguranca: #fcd34d;
+  --texto-aviso-seguranca: #78350f;
+
+  --fundo-meta-estado: #f5ebe0;
+  --texto-meta-estado: #6f4e37;
+
+  --valor-peca-cor: #854d0e;
+  --fundo-img-peca: #edf2f7;
+
+  --fundo-passo-receita: #f7faf8;
+  --borda-passo-receita: #2d6a4f;
+
+  --fundo-caixa-anuncio: #ffffff;
+  --borda-caixa-anuncio: #40916c;
+  --fundo-secao-anunciar: linear-gradient(180deg, #edf7f0 0%, #d8f3dc 100%);
+
+  --tag-categoria-bg: #d8f3dc;
+  --tag-categoria-texto: #2d6a4f;
+
+  /* Cores de acao e botoes */
   --verde-profundo: #123325;
   --verde-escuro: #1b4332;
   --verde-medio: #2d6a4f;
   --verde-folha: #40916c;
   --verde-claro: #d8f3dc;
-  --verde-fundo: #f2f7f4;
-
-  --terra-escuro: #6f4e37;
-  --terra-medio: #8d5b4c;
-  --areia-clara: #fdfaf6;
-  --areia-borda: #e7dfd5;
 
   --cor-doacao: #1e7e34;
   --cor-troca: #006699;
@@ -18,16 +57,61 @@
 
   --whatsapp-cor: #15803d;
   --whatsapp-hover: #0f5c2b;
-  --amarelo-destaque: #fef08a;
 
-  --texto-principal: #1c2520;
-  --texto-suave: #374151;
   --branco-puro: #ffffff;
-
   --raio-card: 16px;
   --raio-botao: 12px;
   --sombra-suave: 0 4px 16px rgba(27, 67, 50, 0.08);
   --sombra-hover: 0 8px 24px rgba(27, 67, 50, 0.16);
+}
+
+/* Variaveis do modo escuro */
+[data-tema="escuro"] {
+  --fundo-pagina: #111a15;
+  --fundo-secao-alt: #16221c;
+  --fundo-card: #1b2921;
+  --borda-card: #2c4236;
+  --borda-card-hover: #40916c;
+  --texto-principal: #f0f7f3;
+  --texto-suave: #cbd5ce;
+  --titulo-cor: #80eec0;
+
+  --fundo-painel: #1b2921;
+  --borda-painel: #2c4236;
+
+  --fundo-inputs: #141f19;
+  --borda-inputs: #3d5a4a;
+  --texto-inputs: #ffffff;
+
+  --fundo-passo: #18251e;
+  --borda-passo: #2c4236;
+
+  --fundo-alerta: #281d08;
+  --borda-alerta: #f59e0b;
+  --texto-alerta: #fde68a;
+
+  --fundo-aviso-seguranca: #2b1f09;
+  --borda-aviso-seguranca: #d97706;
+  --texto-aviso-seguranca: #fef3c7;
+
+  --fundo-meta-estado: #292017;
+  --texto-meta-estado: #f3d5be;
+
+  --valor-peca-cor: #fcd34d;
+  --fundo-img-peca: #16221b;
+
+  --fundo-passo-receita: #18251e;
+  --borda-passo-receita: #52b788;
+
+  --fundo-caixa-anuncio: #1b2921;
+  --borda-caixa-anuncio: #40916c;
+  --fundo-secao-anunciar: linear-gradient(180deg, #132018 0%, #1a2b21 100%);
+
+  --tag-categoria-bg: #1e382b;
+  --tag-categoria-texto: #80eec0;
+
+  --sombra-suave: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --sombra-hover: 0 8px 24px rgba(0, 0, 0, 0.55);
 }
 
 /* Configuracoes basicas da pagina */
@@ -44,9 +128,10 @@ body {
   font-size: 1.125rem;
   line-height: 1.6;
   color: var(--texto-principal);
-  background-color: var(--areia-clara);
+  background-color: var(--fundo-pagina);
   margin: 0;
   padding: 0;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, figure {
@@ -77,6 +162,13 @@ a {
 }
 a:hover {
   color: var(--verde-escuro);
+}
+
+[data-tema="escuro"] a {
+  color: #80eec0;
+}
+[data-tema="escuro"] a:hover {
+  color: #ffffff;
 }
 
 /* Container centralizado da pagina */
@@ -191,6 +283,7 @@ a:hover {
 .d-none { display: none !important; }
 .d-block { display: block !important; }
 .flex-column { flex-direction: column !important; }
+.flex-wrap { flex-wrap: wrap !important; }
 
 @media (min-width: 576px) {
   .flex-sm-row { flex-direction: row !important; }
@@ -237,13 +330,19 @@ a:hover {
 /* Tipografia */
 .text-center { text-align: center !important; }
 .text-start { text-align: left !important; }
-.text-dark { color: #1c2520 !important; }
-.text-secondary, .text-muted { color: #4b5563 !important; }
+.text-dark { color: var(--texto-principal) !important; }
+.text-secondary, .text-muted { color: var(--texto-suave) !important; }
 .text-success { color: #15803d !important; }
 .text-warning { color: #b45309 !important; }
 .text-danger { color: #dc2626 !important; }
 .text-primary { color: #0284c7 !important; }
 .text-light { color: #f1f5f3 !important; }
+
+[data-tema="escuro"] .text-success { color: #4ade80 !important; }
+[data-tema="escuro"] .text-warning { color: #fcd34d !important; }
+[data-tema="escuro"] .text-primary { color: #38bdf8 !important; }
+[data-tema="escuro"] .bg-white { background-color: var(--fundo-card) !important; }
+[data-tema="escuro"] .border { border-color: var(--borda-card) !important; }
 
 .fw-bold { font-weight: 700 !important; }
 .fw-semibold { font-weight: 600 !important; }
@@ -266,9 +365,23 @@ a:hover {
 .secao-passos,
 .secao-anunciar {
   padding: 4.5rem 1rem;
+  transition: background-color 0.25s ease;
 }
 
-/* Cabecalho padronizado das secoes (aproxima o titulo da descricao e afasta dos cards) */
+.secao-passos,
+.secao-dicas {
+  background-color: var(--fundo-secao-alt);
+}
+
+.secao-beneficios {
+  background-color: var(--fundo-pagina);
+}
+
+.secao-anunciar {
+  background: var(--fundo-secao-anunciar);
+}
+
+/* Cabecalho padronizado das secoes */
 .cabecalho-secao {
   text-align: center;
   margin-bottom: 3.25rem;
@@ -277,10 +390,11 @@ a:hover {
 .titulo-secao {
   font-size: 2.2rem;
   font-weight: 800;
-  color: var(--verde-escuro);
+  color: var(--titulo-cor);
   margin-top: 0;
   margin-bottom: 0.5rem;
   line-height: 1.25;
+  transition: color 0.25s ease;
 }
 
 .subtitulo-secao {
@@ -292,6 +406,7 @@ a:hover {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  transition: color 0.25s ease;
 }
 
 /* Bloco para botoes de acao abaixo dos grids */
@@ -312,14 +427,14 @@ a:hover {
   border-radius: 6px;
 }
 .bg-success-subtle {
-  background-color: #dcfce7 !important;
-  color: #15803d !important;
+  background-color: var(--tag-categoria-bg) !important;
+  color: var(--tag-categoria-texto) !important;
 }
 .rounded-3 { border-radius: 12px !important; }
 .rounded-4 { border-radius: 16px !important; }
 .rounded-pill { border-radius: 50rem !important; }
-.shadow-sm { box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08) !important; }
-.border { border: 1px solid #cbd5e1 !important; }
+.shadow-sm { box-shadow: var(--sombra-suave) !important; }
+.border { border: 1px solid var(--borda-card) !important; }
 .border-2 { border-width: 2px !important; }
 .border-warning { border-color: #f59e0b !important; }
 
@@ -347,6 +462,15 @@ a:hover {
   color: #ffffff;
 }
 
+[data-tema="escuro"] .btn-outline-success {
+  border-color: #80eec0;
+  color: #80eec0;
+}
+[data-tema="escuro"] .btn-outline-success:hover {
+  background-color: #80eec0;
+  color: #052e16;
+}
+
 /* Alerta de sucesso */
 .alert {
   padding: 1.25rem 1.5rem;
@@ -358,6 +482,11 @@ a:hover {
   background-color: #dcfce7;
   border-color: #86efac;
   color: #14532d;
+}
+[data-tema="escuro"] .alert-success {
+  background-color: #142a1e;
+  border-color: #2d6a4f;
+  color: #86efac;
 }
 
 /* Topo do site */
@@ -444,6 +573,40 @@ a:hover {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Botao de alternar modo claro e escuro */
+.btn-trocar-tema {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.55rem 1.15rem;
+  border-radius: 50rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 46px;
+  white-space: nowrap;
+}
+.btn-trocar-tema:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+[data-tema="escuro"] .btn-trocar-tema {
+  background-color: #1c2b23;
+  color: #fef08a;
+  border-color: #40916c;
+}
+[data-tema="escuro"] .btn-trocar-tema:hover {
+  background-color: #273b30;
+  color: #ffffff;
+}
+
 /* Botao principal do brecho */
 .btn-cta-principal {
   background-color: #22c55e;
@@ -470,18 +633,19 @@ a:hover {
 
 /* Faixa de aviso academico */
 .alerta-extensao {
-  background-color: #fef3c7;
-  border-left: 6px solid #d97706;
-  border-bottom: 1px solid #fde68a;
-  color: #78350f;
+  background-color: var(--fundo-alerta);
+  border-left: 6px solid var(--borda-alerta);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--texto-alerta);
   font-size: 1.05rem;
   padding: 0.85rem 1rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* Passo a passo como funciona */
 .card-passo {
-  background-color: var(--verde-fundo);
-  border: 2px solid #cfe3d6;
+  background-color: var(--fundo-passo);
+  border: 2px solid var(--borda-passo);
   border-radius: var(--raio-card);
   padding: 2.2rem 1.5rem;
   height: 100%;
@@ -489,7 +653,7 @@ a:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 .card-passo:hover {
   transform: translateY(-3px);
@@ -515,27 +679,31 @@ a:hover {
   color: var(--verde-medio);
   margin-bottom: 0.75rem;
 }
+[data-tema="escuro"] .icone-passo {
+  color: #80eec0;
+}
 
 .titulo-passo {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--verde-escuro);
+  color: var(--titulo-cor);
   margin-bottom: 0.6rem;
 }
 
 /* Filtros da vitrine */
 .painel-filtros {
-  background-color: var(--branco-puro);
-  border: 2px solid var(--areia-borda);
+  background-color: var(--fundo-painel);
+  border: 2px solid var(--borda-painel);
   border-radius: var(--raio-card);
   padding: 1.75rem;
   margin-bottom: 2.75rem;
   box-shadow: var(--sombra-suave);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .rotulo-filtro {
   font-weight: 700;
-  color: var(--verde-escuro);
+  color: var(--titulo-cor);
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
@@ -547,17 +715,22 @@ a:hover {
   font-family: inherit;
   font-size: 1.125rem;
   padding: 0.75rem 1rem;
-  border: 2px solid #cbd5e1;
+  border: 2px solid var(--borda-inputs);
   border-radius: 10px;
-  color: var(--texto-principal);
-  background-color: #f8fafc;
+  color: var(--texto-inputs);
+  background-color: var(--fundo-inputs);
   min-height: 52px;
   width: 100%;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 .select-acessivel:focus,
 .form-select:focus {
   border-color: var(--verde-medio);
-  background-color: #ffffff;
+  background-color: var(--fundo-card);
+}
+[data-tema="escuro"] .select-acessivel:focus,
+[data-tema="escuro"] .form-select:focus {
+  border-color: #80eec0;
 }
 
 .btn-limpar-filtros {
@@ -565,9 +738,9 @@ a:hover {
   font-size: 1rem;
   font-weight: 600;
   padding: 0.6rem 1rem;
-  color: var(--terra-escuro);
+  color: var(--texto-suave);
   background: transparent;
-  border: 2px dashed var(--terra-medio);
+  border: 2px dashed var(--borda-inputs);
   border-radius: 8px;
   min-height: 52px;
   cursor: pointer;
@@ -577,38 +750,40 @@ a:hover {
   justify-content: center;
 }
 .btn-limpar-filtros:hover {
-  background-color: #f8edeb;
-  color: #431407;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border-color: #ef4444;
 }
 
 /* Card das pecas na vitrine */
 .card-peca {
-  background-color: var(--branco-puro);
-  border: 2px solid #e2e8f0;
+  background-color: var(--fundo-card);
+  border: 2px solid var(--borda-card);
   border-radius: var(--raio-card);
   overflow: hidden;
   box-shadow: var(--sombra-suave);
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.25s ease;
 }
 .card-peca:hover {
   transform: translateY(-4px);
   box-shadow: var(--sombra-hover);
-  border-color: #94a3b8;
+  border-color: var(--borda-card-hover);
 }
 
 .container-imagem-peca {
   position: relative;
   width: 100%;
   height: 220px;
-  background-color: #edf2f7;
+  background-color: var(--fundo-img-peca);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--borda-card);
+  transition: background-color 0.25s ease;
 }
 
 .container-imagem-peca img {
@@ -651,12 +826,13 @@ a:hover {
   display: inline-block;
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--verde-medio);
-  background-color: var(--verde-claro);
+  color: var(--tag-categoria-texto);
+  background-color: var(--tag-categoria-bg);
   padding: 0.25rem 0.65rem;
   border-radius: 6px;
   margin-bottom: 0.6rem;
   align-self: flex-start;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .titulo-peca {
@@ -676,19 +852,21 @@ a:hover {
 
 .meta-estado {
   font-size: 1rem;
-  color: var(--terra-escuro);
-  background-color: #f5ebe0;
+  color: var(--texto-meta-estado);
+  background-color: var(--fundo-meta-estado);
   padding: 0.45rem 0.75rem;
   border-radius: 6px;
   margin-bottom: 1rem;
   font-weight: 600;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .valor-peca {
   font-size: 1.35rem;
   font-weight: 800;
-  color: #854d0e;
+  color: var(--valor-peca-cor);
   margin-bottom: 1.15rem;
+  transition: color 0.25s ease;
 }
 
 /* Botao do WhatsApp em cada peca */
@@ -718,15 +896,15 @@ a:hover {
 
 /* Cards da aba de dicas e curadoria */
 .card-curadoria {
-  background-color: var(--branco-puro);
-  border: 2px solid #dce7e1;
+  background-color: var(--fundo-card);
+  border: 2px solid var(--borda-card);
   border-radius: var(--raio-card);
   padding: 2rem;
   height: 100%;
   box-shadow: var(--sombra-suave);
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.25s ease;
 }
 .card-curadoria:hover {
   transform: translateY(-4px);
@@ -738,56 +916,61 @@ a:hover {
   width: 58px;
   height: 58px;
   border-radius: 14px;
-  background-color: var(--verde-claro);
-  color: var(--verde-escuro);
+  background-color: var(--tag-categoria-bg);
+  color: var(--tag-categoria-texto);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 1.8rem;
   margin-bottom: 1.25rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .passo-receita {
-  background-color: #f7faf8;
-  border-left: 4px solid var(--verde-medio);
+  background-color: var(--fundo-passo-receita);
+  border-left: 4px solid var(--borda-passo-receita);
   padding: 1rem 1.15rem;
   border-radius: 8px;
   margin-top: 1rem;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 /* Cards de beneficios */
 .card-beneficio {
-  background-color: var(--branco-puro);
-  border: 2px solid var(--areia-borda);
+  background-color: var(--fundo-card);
+  border: 2px solid var(--borda-card);
   border-radius: var(--raio-card);
   padding: 2.25rem 1.75rem;
   height: 100%;
   box-shadow: var(--sombra-suave);
   text-align: center;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .icone-beneficio {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: var(--verde-claro);
-  color: var(--verde-escuro);
+  background-color: var(--tag-categoria-bg);
+  color: var(--tag-categoria-texto);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
   margin-bottom: 1.35rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* Formulario da aba Quero Anunciar */
 .caixa-anuncio {
-  background-color: var(--branco-puro);
-  border: 2px solid var(--verde-folha);
+  background-color: var(--fundo-caixa-anuncio);
+  border: 2px solid var(--borda-caixa-anuncio);
   border-radius: 20px;
   padding: 2.5rem 2rem;
-  box-shadow: 0 8px 30px rgba(27, 67, 50, 0.12);
+  box-shadow: var(--sombra-suave);
   max-width: 840px;
   margin: 0 auto;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .form-label {
@@ -802,17 +985,22 @@ a:hover {
   font-family: inherit;
   font-size: 1.125rem;
   padding: 0.8rem 1rem;
-  border: 2px solid #cbd5e1;
+  border: 2px solid var(--borda-inputs);
   border-radius: 10px;
   min-height: 52px;
-  color: var(--texto-principal);
-  background-color: #f8fafc;
+  color: var(--texto-inputs);
+  background-color: var(--fundo-inputs);
   width: 100%;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 .input-acessivel:focus,
 .form-control:focus {
   border-color: var(--verde-medio);
-  background-color: #ffffff;
+  background-color: var(--fundo-card);
+}
+[data-tema="escuro"] .input-acessivel:focus,
+[data-tema="escuro"] .form-control:focus {
+  border-color: #80eec0;
 }
 
 .badge-anuncio-comunitario {
@@ -841,19 +1029,20 @@ a:hover {
   transition: all 0.2s ease;
 }
 .btn-remover-anuncio:hover {
-  background-color: #fee2e2;
+  background-color: rgba(220, 38, 38, 0.12);
   border-color: #dc2626;
 }
 
 .caixa-aviso-responsabilidade {
-  background-color: #fffbeb;
-  border: 2px solid #fcd34d;
+  background-color: var(--fundo-aviso-seguranca);
+  border: 2px solid var(--borda-aviso-seguranca);
   border-radius: 12px;
   padding: 1.35rem;
-  color: #78350f;
+  color: var(--texto-aviso-seguranca);
   margin-top: 1.75rem;
   margin-bottom: 1.75rem;
   font-size: 1.05rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .btn-anunciar-whatsapp {
